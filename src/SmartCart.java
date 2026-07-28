@@ -11,14 +11,7 @@ public class SmartCart {
     public double calculateTotalCheck(boolean hasDiscountCard) {
         double total = 0;
         for (Item item : items) {
-            int itemDiscountPercents;
-            if (item.getCategory() == Category.FOOD) {
-                itemDiscountPercents = 5;
-            } else if (item.getCategory() == Category.CLOTHES) {
-                itemDiscountPercents = 10;
-            } else {
-                itemDiscountPercents = 0;
-            }
+            int itemDiscountPercents = getItemDiscountPercents(item);
             double itemDiscount = item.getPrice() * itemDiscountPercents / 100;
             double itemPriceWithDiscount = item.getPrice() - itemDiscount;
             total = total + itemPriceWithDiscount;
@@ -35,5 +28,17 @@ public class SmartCart {
         }
         return total;
 
+    }
+
+    private static int getItemDiscountPercents(Item item) {
+        int itemDiscountPercents;
+        if (item.getCategory() == Category.FOOD) {
+            itemDiscountPercents = 5;
+        } else if (item.getCategory() == Category.CLOTHES) {
+            itemDiscountPercents = 10;
+        } else {
+            itemDiscountPercents = 0;
+        }
+        return itemDiscountPercents;
     }
 }
