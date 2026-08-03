@@ -3,8 +3,13 @@ package tasks.SmartHomeEcosystem;
 public class SecurityCamera extends BaseDevice{
     private RiskLevel riskLevel = RiskLevel.LOW;
 
+
     SecurityCamera(String modelName) {
         super(modelName);
+    }
+
+    public RiskLevel getRiskLevel() {
+        return riskLevel;
     }
 
     @Override
