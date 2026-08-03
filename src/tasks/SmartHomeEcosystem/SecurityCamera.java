@@ -4,7 +4,7 @@ public class SecurityCamera extends BaseDevice{
     private RiskLevel riskLevel = RiskLevel.LOW;
 
 
-    SecurityCamera(String modelName) {
+  public   SecurityCamera(String modelName) {
         super(modelName);
     }
 

@@ -8,7 +8,7 @@ public class Room {
     private List<SmartDevice> devices = new ArrayList<>();
     private List<String> incidentLogs = new ArrayList<>();
 
-    Room(String roomName) {
+    public Room(String roomName) {
         this.roomName = roomName;
     }
 

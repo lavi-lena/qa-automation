@@ -3,7 +3,7 @@ package tasks.SmartHomeEcosystem;
 public class Thermostat extends BaseDevice {
     int currentTemperature = 22;
 
-    Thermostat(String modelName) {
+  public   Thermostat(String modelName) {
         super(modelName);
     }
 
