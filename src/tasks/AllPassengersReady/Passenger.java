@@ -22,4 +22,18 @@ public class Passenger {
         return bus.stream()
                 .allMatch(p -> p.getHasTicket());
     }
+    public static void allPassengersReady(){
+        List<Passenger> bus1 = List.of(
+                new Passenger("Иван", true),
+                new Passenger("Мария", true),
+                new Passenger("Петр", true)
+        );
+        List<Passenger> bus2 = List.of(
+                new Passenger("Иван", true),
+                new Passenger("Мария", false),
+                new Passenger("Петр", true)
+        );
+        System.out.println("Автобус 1 готов? "+Passenger.isEveryoneReady(bus1));
+        System.out.println("Автобус 2 готов? "+Passenger.isEveryoneReady(bus2));
+    }
 }
