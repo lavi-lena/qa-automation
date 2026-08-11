@@ -1,6 +1,4 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -9,16 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
-public class ClickTest {
+public class ClickTest extends BaseTest {
     private WebDriver driver;
 
-    @BeforeEach
-    public void setup() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-    }
+
     @Test
     public void testAddToCartButton() {
         driver.get("https://www.saucedemo.com/");
@@ -37,11 +29,6 @@ public class ClickTest {
         Assertions.assertEquals("1", cartCount);
 
     }
-    @AfterEach
-    public void teardown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+
 }
 
