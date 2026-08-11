@@ -9,7 +9,7 @@ import java.util.List;
 import java.time.Duration;
 
 public class ClearInputTest extends BaseTest{
-    private WebDriver driver;
+
 
 
     @Test

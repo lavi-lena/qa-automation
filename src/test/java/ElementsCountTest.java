@@ -9,7 +9,7 @@ import java.util.List;
 import java.time.Duration;
 
 public class ElementsCountTest extends BaseTest{
-    private WebDriver driver;
+
 
 
 

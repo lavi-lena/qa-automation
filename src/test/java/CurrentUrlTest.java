@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class CurrentUrlTest extends BaseTest{
-    private WebDriver driver;
+
 
 
     @Test
@@ -17,7 +17,7 @@ public class CurrentUrlTest extends BaseTest{
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
         String actualUrl = driver.getCurrentUrl();
-        String expectedUrl = "https://saucedemo.cominventory.html";
+        String expectedUrl = "https://www.saucedemo.com/inventory.html";
         Assertions.assertEquals(expectedUrl, actualUrl);
     }
 

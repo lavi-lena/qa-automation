@@ -9,7 +9,6 @@ import java.time.Duration;
 
 
 public class SearchInputsTest extends BaseTest{
-    private WebDriver driver;
 
 
     @Test
