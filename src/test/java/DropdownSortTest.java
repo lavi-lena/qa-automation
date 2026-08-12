@@ -8,11 +8,7 @@ public class DropdownSortTest extends BaseTest {
 
     @Test
     public void testDropdownSortingZtoA() {
-        driver.get("https://saucedemo.com");
-
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        loginToSaucedemo();
 
         WebElement dropdownElement = driver.findElement(By.className("product_sort_container"));
         Select sortSelect = new Select(dropdownElement);

@@ -15,10 +15,7 @@ public class ElementsCountTest extends BaseTest{
 
     @Test
     public void testCatalogItemsCount() {
-        driver.get("https://saucedemo.com");
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        loginToSaucedemo();
 
         List<WebElement> itemsList = driver.findElements(By.className("inventory_item"));
         int actualCount = itemsList.size();

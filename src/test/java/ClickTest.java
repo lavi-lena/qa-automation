@@ -13,10 +13,7 @@ public class ClickTest extends BaseTest {
 
     @Test
     public void testAddToCartButton() {
-        driver.get("https://www.saucedemo.com/");
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        loginToSaucedemo();
         WebElement addToCartButton = driver.findElement(By.id("add-to-cart-sauce-labs-backpack"));
         addToCartButton.click();
 

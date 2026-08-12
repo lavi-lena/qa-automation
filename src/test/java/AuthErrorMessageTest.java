@@ -12,10 +12,7 @@ public class AuthErrorMessageTest extends BaseTest {
 
     @Test
     public void testLockedOutUserError() {
-        driver.get("https://www.saucedemo.com/");
-        driver.findElement(By.id("user-name")).sendKeys("locked_out_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        loginToSaucedemo();
         WebElement errorContainer = driver.findElement(By.cssSelector("[data-test='error']"));
         String actualErrorText = errorContainer.getText();
         boolean isTextCorrect = actualErrorText.contains("Epic sadface: Sorry, this user has been locked out.");

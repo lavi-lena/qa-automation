@@ -12,10 +12,7 @@ public class CurrentUrlTest extends BaseTest{
 
     @Test
     public void testSuccessfulLoginRedirect() {
-        driver.get("https://saucedemo.com");
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        loginToSaucedemo();
         String actualUrl = driver.getCurrentUrl();
         String expectedUrl = "https://www.saucedemo.com/inventory.html";
         Assertions.assertEquals(expectedUrl, actualUrl);

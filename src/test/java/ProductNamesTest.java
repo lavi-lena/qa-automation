@@ -8,10 +8,7 @@ public class ProductNamesTest extends BaseTest {
 
     @Test
     public void testProductListContainsJacket() {
-        driver.get("https://saucedemo.com");
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        loginToSaucedemo();
 
         List<WebElement> nameElements = driver.findElements(By.className("inventory_item_name"));
         List<String> allProductNames = nameElements.stream()
