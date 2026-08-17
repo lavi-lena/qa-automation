@@ -10,4 +10,24 @@ public class ArrayPractice {
         }
         return sum;
     }
+    public static boolean contains(int[]array,int target){
+        boolean isFound = false;
+        for (int i = 0;i<array.length;i++){
+            if (array[i] ==target){
+                isFound = true;
+                break;
+            }
+        }
+        return isFound;
+    }
+
+    public static boolean contains2(int[]array,int target){
+
+        for (int i = 0;i<array.length;i++){
+            if (array[i] ==target){
+               return true;
+            }
+        }
+       return false;
+    }
 }
