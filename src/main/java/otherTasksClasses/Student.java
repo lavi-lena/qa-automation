@@ -1,0 +1,9 @@
+package otherTasksClasses;
+
+public class Student {
+    String name;
+
+    Student(String name){
+        this.name = name;
+    }
+}
