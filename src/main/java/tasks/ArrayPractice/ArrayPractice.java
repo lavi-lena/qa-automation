@@ -63,4 +63,15 @@ public class ArrayPractice {
         return average;
     }
 
+    public static int[] replaceNegativesWithZeros(int[]array){
+        for (int i =0;i<array.length;i++){
+            if (array[i]<0){
+                array[i]=0;
+            }
+        }
+
+
+        return array;
+    }
+
 }
