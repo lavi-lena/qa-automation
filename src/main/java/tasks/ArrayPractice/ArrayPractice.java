@@ -30,4 +30,16 @@ public class ArrayPractice {
         }
        return false;
     }
+
+    public static int getEvenNumbersCount(int[]array){
+       int evenNumbersCount =0;
+        for (int i=0;i<array.length;i++){
+            if (array[i]%2==0){
+                evenNumbersCount= evenNumbersCount+1;
+
+            }
+        }
+        return evenNumbersCount;
+
+    }
 }
