@@ -53,4 +53,14 @@ public class ArrayPractice {
         }
         return min;
     }
+
+    public static double getAverage(double[]array){
+        double sum = 0;
+        for (int i=0;i<array.length;i++){
+            sum = sum+array[i];
+        }
+        double average = sum/array.length;
+        return average;
+    }
+
 }
