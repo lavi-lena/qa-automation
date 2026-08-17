@@ -77,21 +77,33 @@ public class ArrayPractice {
 
     public static int findElementIndex(int[] array, int target) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i]==target){
+            if (array[i] == target) {
                 return i;
             }
         }
         return -1;
     }
 
-    public static int getNumCount(int[] array, int target){
+    public static int getNumCount(int[] array, int target) {
         int count = 0;
-        for (int i=0;i<array.length;i++){
-            if(array[i]==target){
-            count = count+1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                count = count + 1;
             }
         }
         return count;
+    }
+
+    public static boolean isIncreasing(int[] array) {
+
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] >= array[i + 1]) {
+                return false;
+
+
+            }
+        }
+        return true;
     }
 }
 
