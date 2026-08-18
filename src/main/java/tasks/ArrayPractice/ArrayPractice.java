@@ -175,5 +175,21 @@ public class ArrayPractice {
         }
         return array;
     }
+    public static int findSecondMax(int[] array){
+        int max = array[0];
+        for(int i=1;i<array.length;i++){
+          if(array[i]>max){
+              max=array[i];
+          }
+        }
+
+        int secondMax = Integer.MIN_VALUE;
+        for (int i=0;i<array.length;i++){
+            if(array[i]<max && array[i]>secondMax){
+                secondMax=array[i];
+            }
+        }
+        return secondMax;
+    }
 }
 
