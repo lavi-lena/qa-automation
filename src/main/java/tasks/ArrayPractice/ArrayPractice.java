@@ -119,17 +119,18 @@ public class ArrayPractice {
     public static String joinStrings(String[] words) {
         String result = words[0];
         for (int i = 1; i < words.length; i++) {
-            result = result +" "+ words[i];
+            result = result + " " + words[i];
         }
         return result;
     }
-    public static int getDiffMaxMin(int[] array){
-        int min = array[0] ,max =array[0];
-        for (int i=1;i<array.length;i++){
-            if (array[i]<min){
+
+    public static int getDiffMaxMin(int[] array) {
+        int min = array[0], max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
                 min = array[i];
             }
-            if(array[i]>max){
+            if (array[i] > max) {
                 max = array[i];
             }
         }
@@ -137,14 +138,22 @@ public class ArrayPractice {
         return result;
 
     }
-    public static int isGreaterThanLeftNeighbor(int[]array){
-       int count = 0;
-        for (int i=0;i<array.length-1;i++){
-            if (array[i+1]>array[i]){
-                count = count +1;
+
+    public static int isGreaterThanLeftNeighbor(int[] array) {
+        int count = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i + 1] > array[i]) {
+                count = count + 1;
             }
         }
         return count;
+    }
+
+    public static int[] linearScale(int[] array, int multiplier) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = array[i] * multiplier;
+        }
+        return array;
     }
 }
 
