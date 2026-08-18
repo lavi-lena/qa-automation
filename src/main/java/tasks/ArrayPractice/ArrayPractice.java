@@ -175,30 +175,42 @@ public class ArrayPractice {
         }
         return array;
     }
-    public static int findSecondMax(int[] array){
+
+    public static int findSecondMax(int[] array) {
         int max = array[0];
-        for(int i=1;i<array.length;i++){
-          if(array[i]>max){
-              max=array[i];
-          }
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
         }
 
         int secondMax = Integer.MIN_VALUE;
-        for (int i=0;i<array.length;i++){
-            if(array[i]<max && array[i]>secondMax){
-                secondMax=array[i];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < max && array[i] > secondMax) {
+                secondMax = array[i];
             }
         }
         return secondMax;
     }
-    public static String findLongestWord(String[] words){
+
+    public static String findLongestWord(String[] words) {
         String longest = words[0];
-        for (int i=1;i<words.length;i++){
-            if(words[i].length() > longest.length()){
+        for (int i = 1; i < words.length; i++) {
+            if (words[i].length() > longest.length()) {
                 longest = words[i];
             }
         }
         return longest;
+    }
+
+    public static int countElement(int[] array, int target) {
+        int count = 0;
+        for (int i = 0; i < array.length;i++){
+            if(array[i]==target){
+                count = count+1;
+            }
+        }
+        return count;
     }
 }
 
