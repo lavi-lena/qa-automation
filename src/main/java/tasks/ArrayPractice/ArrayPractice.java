@@ -105,14 +105,23 @@ public class ArrayPractice {
         }
         return true;
     }
-    public static int findMaxAtEvenIndices(int[] array){
+
+    public static int findMaxAtEvenIndices(int[] array) {
         int max = array[0];
-        for (int i=2;i<array.length;i=i+2){
-            if(array[i]>max){
+        for (int i = 2; i < array.length; i = i + 2) {
+            if (array[i] > max) {
                 max = array[i];
             }
         }
         return max;
+    }
+
+    public static String joinStrings(String[] words) {
+        String result = words[0];
+        for (int i = 1; i < words.length; i++) {
+            result = result +" "+ words[i];
+        }
+        return result;
     }
 }
 
