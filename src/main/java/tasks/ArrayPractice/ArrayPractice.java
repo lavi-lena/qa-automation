@@ -226,5 +226,14 @@ public class ArrayPractice {
 
         return false;
     }
+
+    public static String findFirstNegativeNum(int[] array){
+        for (int i = 0; i<array.length;i++){
+            if (array[i]<0){
+                return "Число: "+array[i]+",позиция: "+i;
+            }
+        }
+        return "отрицательное число отсутствует";
+    }
 }
 
