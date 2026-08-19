@@ -235,5 +235,17 @@ public class ArrayPractice {
         }
         return "отрицательное число отсутствует";
     }
+
+    public static String findPairsWithSum(int[] array,int target){
+        String result ="";
+        for (int i = 0; i<array.length-1;i++){
+            for(int k = i+1;k<array.length;k++){
+                if (array[i] + array[k]==target){
+                    result = result + "Пара ("+ array[i]+" и " + array[k] + "),";
+                }
+            }
+        }
+        return result.substring(0,result.length()-1);
+    }
 }
 
