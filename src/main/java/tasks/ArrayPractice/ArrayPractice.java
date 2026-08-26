@@ -314,5 +314,17 @@ public class ArrayPractice {
         }
         return result;
     }
+    public static int calculateCashback (int[] array){
+       int sumWithCashBack = 0;
+        for(int i=0;i<array.length;i++){
+            if(array[i]>1000){
+                sumWithCashBack= sumWithCashBack + array[i]/10;
+
+            }
+
+
+        }
+        return sumWithCashBack;
+    }
 }
 
