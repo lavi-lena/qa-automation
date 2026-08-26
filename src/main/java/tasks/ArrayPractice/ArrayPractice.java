@@ -268,5 +268,34 @@ public class ArrayPractice {
        return result;
 
     }
+    public static boolean isAnagram(String first, String second){
+        if(first.length() != second.length()){
+            return false;
+        }
+        char[] firstArray = first.toCharArray();
+        char[] secondArray = second.toCharArray();
+
+
+        for (int i=0;i<firstArray.length;i++){
+        char currentSymbol = firstArray[i];
+            int symbolCountInFirst = 0;
+            for (int k=0;k<firstArray.length;k++){
+                if(firstArray[k]==currentSymbol){
+                    symbolCountInFirst++;
+                }
+            }
+
+            int symbolCountInSecond = 0;
+            for (int k=0;k<secondArray.length;k++){
+                if(secondArray[k]==currentSymbol){
+                    symbolCountInSecond++;
+                }
+            }
+            if(symbolCountInFirst != symbolCountInSecond){
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
