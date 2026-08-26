@@ -297,5 +297,22 @@ public class ArrayPractice {
         }
         return true;
     }
+    public static int[] mergeLogs (int[] first,int[] second){
+        int[] result = new int[first.length + second.length];
+        int firstIndex = 0;
+        int secondIndex = 0;
+        for (int i=0; i<result.length;i++){
+
+            if(firstIndex<first.length && first[firstIndex]<second[secondIndex]){
+                result[i]= first[firstIndex];
+                firstIndex++;
+            }
+            else{
+                result[i] = second[secondIndex];
+                secondIndex++;
+            }
+        }
+        return result;
+    }
 }
 
