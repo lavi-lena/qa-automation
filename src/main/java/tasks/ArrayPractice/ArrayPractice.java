@@ -205,9 +205,9 @@ public class ArrayPractice {
 
     public static int countElement(int[] array, int target) {
         int count = 0;
-        for (int i = 0; i < array.length;i++){
-            if(array[i]==target){
-                count = count+1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                count = count + 1;
             }
         }
         return count;
@@ -227,25 +227,46 @@ public class ArrayPractice {
         return false;
     }
 
-    public static String findFirstNegativeNum(int[] array){
-        for (int i = 0; i<array.length;i++){
-            if (array[i]<0){
-                return "Число: "+array[i]+",позиция: "+i;
+    public static String findFirstNegativeNum(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
+                return "Число: " + array[i] + ",позиция: " + i;
             }
         }
         return "отрицательное число отсутствует";
     }
 
-    public static String findPairsWithSum(int[] array,int target){
-        String result ="";
-        for (int i = 0; i<array.length-1;i++){
-            for(int k = i+1;k<array.length;k++){
-                if (array[i] + array[k]==target){
-                    result = result + "Пара ("+ array[i]+" и " + array[k] + "),";
+    public static String findPairsWithSum(int[] array, int target) {
+        String result = "";
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int k = i + 1; k < array.length; k++) {
+                if (array[i] + array[k] == target) {
+                    result = result + "Пара (" + array[i] + " и " + array[k] + "),";
                 }
             }
         }
-        return result.substring(0,result.length()-1);
+        return result.substring(0, result.length() - 1);
+    }
+
+    public static int countOfUniqueNumbers(int[] ids) {
+        int result = 0;
+        for (int i = 0; i < ids.length; i++) {
+            boolean isUnique = true;
+            for (int k = 0; k < ids.length; k++) {
+                if(i==k){
+                    continue;
+                }
+                if (ids[i] == ids[k]) {
+                    isUnique = false;
+                    break;
+                }
+            }
+            if (isUnique) {
+                result++;
+            }
+        }
+       return result;
+
     }
 }
 
