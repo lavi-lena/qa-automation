@@ -350,5 +350,15 @@ public class ArrayPractice {
         }
         return count;
     }
+    public static int[] findTransferPair (int[] balances, int target){
+        for(int i = 0;i<balances.length-1;i++){
+        for (int k = i+1;k<balances.length;k++){
+            if (balances[i] + balances[k] == target){
+                return new int[]{i+1, k+1};
+            }
+        }
+        }
+        return new int[]{};
+    }
 }
 
