@@ -326,5 +326,29 @@ public class ArrayPractice {
         }
         return sumWithCashBack;
     }
+    public static int calculateMaxProfit (int[] prices){
+        int maxProfit = 0;
+        for(int i = 0;i<prices.length-1;i++){
+            int currentBuyPrice = prices[i];
+            for (int k = i+1;k<prices.length;k++){
+                int currentSellPrice = prices[k];
+                int currentProfit = currentSellPrice - currentBuyPrice;
+                if(currentProfit>maxProfit){
+                    maxProfit = currentProfit;
+                }
+            }
+
+        }
+        return maxProfit;
+    }
+    public static int countOddTransactions (int[] transactions){
+        int count = 0;
+        for (int i=0;i<transactions.length;i++){
+            if(transactions[i]%2 != 0){
+                count ++;
+            }
+        }
+        return count;
+    }
 }
 
