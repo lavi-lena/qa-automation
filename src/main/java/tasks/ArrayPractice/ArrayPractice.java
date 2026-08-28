@@ -404,5 +404,16 @@ public class ArrayPractice {
         }
         return result;
     }
+    public static boolean isArithmeticProgression (int[] payments){
+
+        int difference = payments[1] - payments[0];
+        for (int i = 2;i<payments.length;i++){
+
+            if(payments[i]-payments[i-1]!= difference){
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
