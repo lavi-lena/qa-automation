@@ -360,5 +360,14 @@ public class ArrayPractice {
         }
         return new int[]{};
     }
+    public static int findPeakElement (int[] activity){
+        int peakIndex = 0;
+        for (int i = 1;i<activity.length;i++){
+          if(activity[i]>activity[peakIndex]){
+             peakIndex = i;
+          }
+        }
+        return peakIndex;
+    }
 }
 
