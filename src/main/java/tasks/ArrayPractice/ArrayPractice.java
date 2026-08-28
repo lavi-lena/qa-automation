@@ -415,5 +415,18 @@ public class ArrayPractice {
         }
         return true;
     }
+    public static int findMaxIndex (int[] cash){
+       int maxCash = cash[0];
+        int maxIndex = 0;
+        for (int i = 1;i<cash.length;i++){
+            if(cash[i]>maxCash){
+                maxCash = cash[i];
+                maxIndex = i;
+
+            }
+
+        }
+        return maxIndex;
+    }
 }
 
