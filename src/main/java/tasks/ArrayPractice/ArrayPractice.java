@@ -253,7 +253,7 @@ public class ArrayPractice {
         for (int i = 0; i < ids.length; i++) {
             boolean isUnique = true;
             for (int k = 0; k < ids.length; k++) {
-                if(i==k){
+                if (i == k) {
                     continue;
                 }
                 if (ids[i] == ids[k]) {
@@ -265,60 +265,62 @@ public class ArrayPractice {
                 result++;
             }
         }
-       return result;
+        return result;
 
     }
-    public static boolean isAnagram(String first, String second){
-        if(first.length() != second.length()){
+
+    public static boolean isAnagram(String first, String second) {
+        if (first.length() != second.length()) {
             return false;
         }
         char[] firstArray = first.toCharArray();
         char[] secondArray = second.toCharArray();
 
 
-        for (int i=0;i<firstArray.length;i++){
-        char currentSymbol = firstArray[i];
+        for (int i = 0; i < firstArray.length; i++) {
+            char currentSymbol = firstArray[i];
             int symbolCountInFirst = 0;
-            for (int k=0;k<firstArray.length;k++){
-                if(firstArray[k]==currentSymbol){
+            for (int k = 0; k < firstArray.length; k++) {
+                if (firstArray[k] == currentSymbol) {
                     symbolCountInFirst++;
                 }
             }
 
             int symbolCountInSecond = 0;
-            for (int k=0;k<secondArray.length;k++){
-                if(secondArray[k]==currentSymbol){
+            for (int k = 0; k < secondArray.length; k++) {
+                if (secondArray[k] == currentSymbol) {
                     symbolCountInSecond++;
                 }
             }
-            if(symbolCountInFirst != symbolCountInSecond){
+            if (symbolCountInFirst != symbolCountInSecond) {
                 return false;
             }
         }
         return true;
     }
-    public static int[] mergeLogs (int[] first,int[] second){
+
+    public static int[] mergeLogs(int[] first, int[] second) {
         int[] result = new int[first.length + second.length];
         int firstIndex = 0;
         int secondIndex = 0;
-        for (int i=0; i<result.length;i++){
+        for (int i = 0; i < result.length; i++) {
 
-            if(firstIndex<first.length && first[firstIndex]<second[secondIndex]){
-                result[i]= first[firstIndex];
+            if (firstIndex < first.length && first[firstIndex] < second[secondIndex]) {
+                result[i] = first[firstIndex];
                 firstIndex++;
-            }
-            else{
+            } else {
                 result[i] = second[secondIndex];
                 secondIndex++;
             }
         }
         return result;
     }
-    public static int calculateCashback (int[] array){
-       int sumWithCashBack = 0;
-        for(int i=0;i<array.length;i++){
-            if(array[i]>1000){
-                sumWithCashBack= sumWithCashBack + array[i]/10;
+
+    public static int calculateCashback(int[] array) {
+        int sumWithCashBack = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 1000) {
+                sumWithCashBack = sumWithCashBack + array[i] / 10;
 
             }
 
@@ -326,14 +328,15 @@ public class ArrayPractice {
         }
         return sumWithCashBack;
     }
-    public static int calculateMaxProfit (int[] prices){
+
+    public static int calculateMaxProfit(int[] prices) {
         int maxProfit = 0;
-        for(int i = 0;i<prices.length-1;i++){
+        for (int i = 0; i < prices.length - 1; i++) {
             int currentBuyPrice = prices[i];
-            for (int k = i+1;k<prices.length;k++){
+            for (int k = i + 1; k < prices.length; k++) {
                 int currentSellPrice = prices[k];
                 int currentProfit = currentSellPrice - currentBuyPrice;
-                if(currentProfit>maxProfit){
+                if (currentProfit > maxProfit) {
                     maxProfit = currentProfit;
                 }
             }
@@ -341,44 +344,65 @@ public class ArrayPractice {
         }
         return maxProfit;
     }
-    public static int countOddTransactions (int[] transactions){
+
+    public static int countOddTransactions(int[] transactions) {
         int count = 0;
-        for (int i=0;i<transactions.length;i++){
-            if(transactions[i]%2 != 0){
-                count ++;
-            }
-        }
-        return count;
-    }
-    public static int[] findTransferPair (int[] balances, int target){
-        for(int i = 0;i<balances.length-1;i++){
-        for (int k = i+1;k<balances.length;k++){
-            if (balances[i] + balances[k] == target){
-                return new int[]{i+1, k+1};
-            }
-        }
-        }
-        return new int[]{};
-    }
-    public static int findPeakElement (int[] activity){
-        int peakIndex = 0;
-        for (int i = 1;i<activity.length;i++){
-          if(activity[i]>activity[peakIndex]){
-             peakIndex = i;
-          }
-        }
-        return peakIndex;
-    }
-    public static int countDivisibleDigits (int num){
-        int count = 0;
-        char[] numDigits = String.valueOf(num).toCharArray();
-        for (int i = 0;i<numDigits.length;i++){
-            int chNum = Character.getNumericValue(numDigits[i]);
-            if(num%chNum==0){
+        for (int i = 0; i < transactions.length; i++) {
+            if (transactions[i] % 2 != 0) {
                 count++;
             }
         }
         return count;
+    }
+
+    public static int[] findTransferPair(int[] balances, int target) {
+        for (int i = 0; i < balances.length - 1; i++) {
+            for (int k = i + 1; k < balances.length; k++) {
+                if (balances[i] + balances[k] == target) {
+                    return new int[]{i + 1, k + 1};
+                }
+            }
+        }
+        return new int[]{};
+    }
+
+    public static int findPeakElement(int[] activity) {
+        int peakIndex = 0;
+        for (int i = 1; i < activity.length; i++) {
+            if (activity[i] > activity[peakIndex]) {
+                peakIndex = i;
+            }
+        }
+        return peakIndex;
+    }
+
+    public static int countDivisibleDigits(int num) {
+        int count = 0;
+        char[] numDigits = String.valueOf(num).toCharArray();
+        for (int i = 0; i < numDigits.length; i++) {
+            int chNum = Character.getNumericValue(numDigits[i]);
+            if (num % chNum == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static String findLongestCommonPrefix(String str1, String str2) {
+        String result = "";
+        char[] str1Array = str1.toCharArray();
+        char[] str2Array = str2.toCharArray();
+        int minLength = Math.min(str1.length(), str2.length());
+
+        for (int i = 0; i < minLength; i++) {
+            if (str1Array[i] == str2Array[i]) {
+                result += str1Array[i];
+
+            } else {
+                break;
+            }
+        }
+        return result;
     }
 }
 
