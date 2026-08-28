@@ -369,5 +369,16 @@ public class ArrayPractice {
         }
         return peakIndex;
     }
+    public static int countDivisibleDigits (int num){
+        int count = 0;
+        char[] numDigits = String.valueOf(num).toCharArray();
+        for (int i = 0;i<numDigits.length;i++){
+            int chNum = Character.getNumericValue(numDigits[i]);
+            if(num%chNum==0){
+                count++;
+            }
+        }
+        return count;
+    }
 }
 
