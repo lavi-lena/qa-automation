@@ -12,7 +12,7 @@ public class AuthErrorMessageTest extends BaseTest {
 
     @Test
     public void testLockedOutUserError() {
-        loginToSaucedemo();
+        loginToSaucedemoAsLockedUser();
         WebElement errorContainer = driver.findElement(By.cssSelector("[data-test='error']"));
         String actualErrorText = errorContainer.getText();
         boolean isTextCorrect = actualErrorText.contains("Epic sadface: Sorry, this user has been locked out.");
