@@ -1,14 +1,13 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
+package saucedemo.com;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import java.time.Duration;
+
 import java.util.List;
 
-public class AllDescriptionsTest extends BaseTest{
+public class AllDescriptionsTest extends BaseTest {
 
     @Test
     public void testAllDescription(){

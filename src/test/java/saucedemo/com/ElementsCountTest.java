@@ -1,14 +1,13 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
+package saucedemo.com;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import java.util.List;
-import java.time.Duration;
 
-public class ElementsCountTest extends BaseTest{
+import java.util.List;
+
+public class ElementsCountTest extends BaseTest {
 
 
 

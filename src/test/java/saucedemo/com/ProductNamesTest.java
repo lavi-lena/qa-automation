@@ -1,7 +1,10 @@
+package saucedemo.com;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 
 public class ProductNamesTest extends BaseTest {
