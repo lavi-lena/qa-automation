@@ -16,6 +16,8 @@ public class SignupLoginPage {
     private By loginPasswordInput = By.cssSelector("input[data-qa='login-password']");
     private By loginButton = By.cssSelector("button[data-qa='login-button']");
 
+    private By errorMessage = By.cssSelector(".login-form p");
+
     public SignupLoginPage(WebDriver driver) {
 
         this.driver = driver;
@@ -45,5 +47,8 @@ public class SignupLoginPage {
 
     public void clickLogin() {
         driver.findElement(loginButton).click();
+    }
+    public String getErrorMessageText() {
+        return driver.findElement(errorMessage).getText();
     }
 }

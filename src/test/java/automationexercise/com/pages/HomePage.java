@@ -10,6 +10,8 @@ public class HomePage {
     private By signupLoginButton = By.linkText("Signup / Login");
     private By loggedInAsText = By.cssSelector("li a i.fa-user");
     private By deleteAccountButton = By.linkText("Delete Account");
+    private By logoutButton = By.linkText("Logout");
+    private By contactUsButton = By.linkText("Contact us");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -28,5 +30,11 @@ public class HomePage {
     }
     public void clickDeleteAccount() {
         driver.findElement(deleteAccountButton).click();
+    }
+    public void clickLogout() {
+        driver.findElement(logoutButton).click();
+    }
+    public void clickContactUs(){
+        driver.findElement(contactUsButton).click();
     }
 }
