@@ -12,18 +12,14 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class ReqresApiTests {
-    @BeforeAll
-    public static void setUp() {
-        // Задаем базовый URI один раз для всех тестов в классе
-        RestAssured.baseURI = "https://reqres.in";
-    }
+public class ReqresUserTests extends BaseTest {
+
 
     @Test
     public void testGetSingleUser() {
         // Проверяем получение существующего пользователя (GET /api/users/2)
         given()
-                .contentType(ContentType.JSON)
+
                 .when()
                 .get("/api/users/2")
                 .then()
@@ -38,7 +34,7 @@ public class ReqresApiTests {
     public void testCreateUserSuccess() {
         UserRequest newUser = new UserRequest("morpheus", "leader");
         UserResponse response = given()
-                .contentType(ContentType.JSON)
+
                 .body(newUser)
 
                 .when()
