@@ -7,7 +7,29 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class ReqresUpdateDeleteTests extends BaseTest {
+
+public class ReqresCrudUserTests extends BaseTest {
+
+    @Test
+    public void testCreateUserSuccess() {
+        UserRequest newUser = new UserRequest("morpheus", "leader");
+        UserResponse response = given()
+
+                .body(newUser)
+
+                .when()
+                .post("/api/users")
+
+                .then()
+                .statusCode(201) // Проверяем, что объект успешно создан (201 Created)
+                .extract().as(UserResponse.class);
+
+        assertEquals("morpheus", response.getName());
+        assertEquals("leader", response.getJob());
+        assertNotNull(response.getId());       // Убеждаемся, что сервер сгенерировал ID
+        assertNotNull(response.getCreatedAt());
+    }
+
     @Test
     public void testUpdateUserSuccess() {
         UserRequest updateData = new UserRequest("morpheus", "zion resident");
